@@ -23,7 +23,7 @@
         <td><%= record.prescription_id %></td>
         <td><%= record.date_time %></td>
         <td><%= record.data %></td>
-        <td><%= record.datatype_id %></td>
+        <td><%= record.datatype.name %></td>
         <td>
           <a href="/records/<%= record.id %>" class="btn btn-primary">Show</a>
           <a href="/records/<%= record.id %>/edit" class="btn btn-warning">Edit</a>
