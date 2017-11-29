@@ -1,6 +1,6 @@
 class DataTypesController < ApplicationController
   def index
-    @data_types = DataType.all
+    @data_types = DataType.page(params[:page]).per(10)
 
     render("data_types/index.html.erb")
   end
