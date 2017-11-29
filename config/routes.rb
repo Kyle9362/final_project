@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :patients
+  # Routes for the Patient resource:
+  # READ
+  get "/patients", :controller => "patients", :action => "index"
+  get "/patients/:id", :controller => "patients", :action => "show"
+
+
   # Routes for the Prescription resource:
   # CREATE
   get "/prescriptions/new", :controller => "prescriptions", :action => "new"
