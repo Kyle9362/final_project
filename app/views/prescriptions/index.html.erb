@@ -19,7 +19,7 @@
       <tr>
         <td><%= prescription.doctor.firstname %></td>
         <td><%= prescription.patient.email %></td>
-        <td><%= prescription.data_type_id %></td>
+        <td><%= prescription.data_type.name %></td>
         <td>
           <a href="/prescriptions/<%= prescription.id %>" class="btn btn-primary">Show</a>
           <a href="/prescriptions/<%= prescription.id %>/edit" class="btn btn-warning">Edit</a>
