@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Data_type resource:
+  # CREATE
+  get "/data_types/new", :controller => "data_types", :action => "new"
+  post "/create_data_type", :controller => "data_types", :action => "create"
+
+  # READ
+  get "/data_types", :controller => "data_types", :action => "index"
+  get "/data_types/:id", :controller => "data_types", :action => "show"
+
+  # UPDATE
+  get "/data_types/:id/edit", :controller => "data_types", :action => "edit"
+  post "/update_data_type/:id", :controller => "data_types", :action => "update"
+
+  # DELETE
+  get "/delete_data_type/:id", :controller => "data_types", :action => "destroy"
+  #------------------------------
+
   # Routes for the Record resource:
   # CREATE
   get "/records/new", :controller => "records", :action => "new"

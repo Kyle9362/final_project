@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h1>
+    Data types
+    <a href="/data_types/new" class="btn btn-lg btn-success">New Data type</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Name</th>
+        <th>Data type</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @data_types.each do |data_type| %>
+      <tr>
+        <td><%= data_type.name %></td>
+        <td><%= data_type.data_type %></td>
+        <td><%= data_type.description %></td>
+        <td>
+          <a href="/data_types/<%= data_type.id %>" class="btn btn-primary">Show</a>
+          <a href="/data_types/<%= data_type.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_data_type/<%= data_type.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
