@@ -29,3 +29,65 @@
     </div>
   </div>
 </div>
+
+<!-- A Data type has many prescriptions -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Prescriptions
+      </li>
+
+      <% @data_type.prescriptions.each do |prescription| %>
+        <li class="list-group-item">
+          <a href="/prescriptions/<%= prescription.id %>">
+            <%= prescription.doctor_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/prescriptions/<%= prescription.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/prescriptions/<%= prescription.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_prescription/<%= prescription.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Data type has many records -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Records
+      </li>
+
+      <% @data_type.records.each do |record| %>
+        <li class="list-group-item">
+          <a href="/records/<%= record.id %>">
+            <%= record.patient_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/records/<%= record.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/records/<%= record.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_record/<%= record.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
