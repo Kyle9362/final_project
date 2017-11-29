@@ -1,6 +1,9 @@
 class Patient < ApplicationRecord
   # Direct associations
 
+  has_many   :records,
+             :dependent => :destroy
+
   has_many   :prescriptions,
              :dependent => :destroy
 
