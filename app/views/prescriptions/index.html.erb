@@ -17,9 +17,27 @@
 
       <% @prescriptions.each do |prescription| %>
       <tr>
-        <td><%= prescription.doctor.firstname %></td>
-        <td><%= prescription.patient.email %></td>
-        <td><%= prescription.data_type.name %></td>
+        <td>
+          <% if prescription.doctor.present? %>
+            <a href="/doctors/<%= prescription.doctor.id %>">
+              <%= prescription.doctor.firstname %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if prescription.patient.present? %>
+            <a href="/patients/<%= prescription.patient.id %>">
+              <%= prescription.patient.email %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if prescription.data_type.present? %>
+            <a href="/data_types/<%= prescription.data_type.id %>">
+              <%= prescription.data_type.name %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/prescriptions/<%= prescription.id %>" class="btn btn-primary">Show</a>
           

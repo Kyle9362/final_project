@@ -6,13 +6,31 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Doctor</dt>
-      <dd><%= @prescription.doctor_id %></dd>
+      <dd>
+        <% if @prescription.doctor.present? %>
+          <a href="/doctors/<%= @prescription.doctor_id %>">
+            <%= @prescription.doctor.firstname %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Patient</dt>
-      <dd><%= @prescription.patient_id %></dd>
+      <dd>
+        <% if @prescription.patient.present? %>
+          <a href="/patients/<%= @prescription.patient_id %>">
+            <%= @prescription.patient.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Data type</dt>
-      <dd><%= @prescription.data_type_id %></dd>
+      <dd>
+        <% if @prescription.data_type.present? %>
+          <a href="/data_types/<%= @prescription.data_type_id %>">
+            <%= @prescription.data_type.name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
