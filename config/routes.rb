@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "prescriptions#index"
   # Routes for the Data_type resource:
   # CREATE
   get "/data_types/new", :controller => "data_types", :action => "new"
